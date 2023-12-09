@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project1</title>
+  <link rel="stylesheet" href="Project1.css">
+</head>
+<body>
+  <script>
+    function Validation(){
+      var Name = document.getElementById('name').value;
+      var Email = document.getElementById('email').value;
+      var Password = document.getElementById('Password').value;
+      var CoPassword = document.getElementById('CoPassword').value;
+
+      if (Name == '' || Email == '' || Password == '' || CoPassword == '') {
+        alert("Fill in all the information.");
+        return false; 
+      }
+
+      if (Password !== CoPassword) {
+        alert("Password does not match.");
+        return false; 
+      }
+
+      if (Password.length !== 8) {
+        alert("Password should be 8 characters.");
+        return false;
+      }
+
+      
+      
+    }
+  </script>
+
+  <form class="Project1" onsubmit="return Validation()">
+    <p>Registration Form</p>
+    <br>
+    <label for="Name">Name</label>
+    <input type="text" name="Name" id="name"><br>
+    <label for="Email">Email</label>
+    <input type="email" name="Email" id="email"><br>
+    <label for="Password">Password</label>
+    <input type="password" name="Password" id="Password"><br>
+    <label for="Confirm Password">Confirm Password</label>
+    <input type="password" name="Confirm Password" id="CoPassword"><br>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
